@@ -556,3 +556,5 @@ for (i in 1:n) {
   probability_wy_dem <- mean(bwinswy_dem)
   results_wy_dem[i] <- probability_wy_dem
 }
+
+# Electoral College Count
