@@ -557,4 +557,991 @@ for (i in 1:n) {
   results_wy_dem[i] <- probability_wy_dem
 }
 
+```{r}
+#Trump Alabama
+
+t_func_alab<- function(a) { 
+  (a-a*.57361)/.57361}
+
+alabama<- 5074296
+n<- 10000
+sample_size <- 1000
+resultst_alab <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_alab<- rbeta(n,a,t_func_alab(a))
+pop_alab_t <- rbinom(cali, size = 1, t_alab)
+
+for (i in 1:n) {
+  sample_alab_t <- sample(pop_alab_t, size = sample_size, replace = TRUE)
+  twinsalab <- (sample_alab_t == 1)
+  probabilityt_alab<- mean(twinsalab)
+  resultst_alab[i]<- probabilityt_alab
+}
+
+```
+
+
+```{r}
+#Biden Alabama
+
+b_func_alab<- function(a) { 
+  (a-a*.37827)/.37827}
+
+alabama<- 5074296
+n<- 10000
+sample_size <- 1000
+resultsb_alab <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_alab<- rbeta(n,a,b_func_alab(a))
+pop_alab_b <- rbinom(cali, size = 1, b_alab)
+
+for (i in 1:n) {
+  sample_alab_b <- sample(pop_alab_b, size = sample_size, replace = TRUE)
+  bwinsalab <- (sample_alab_b == 1)
+  probabilityb_alab<- mean(bwinsalab)
+  resultsb_alab[i]<- probabilityb_alab
+}
+
+```
+
+
+```{r}
+#Trump Alaska 
+
+t_func_ak<- function(a) { 
+  (a-a*.51232)/.51232}
+
+alaska<- 733583
+n<- 10000
+sample_size <- 1000
+resultst_ak <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_ak<- rbeta(n,a,t_func_ak(a))
+pop_ak_t <- rbinom(alaska, size = 1, t_ak)
+
+for (i in 1:n) {
+  sample_ak_t <- sample(pop_ak_t, size = sample_size, replace = TRUE)
+  twinsak <- (sample_ak_t == 1)
+  probabilityt_ak<- mean(twinsak)
+  resultst_ak[i]<- probabilityt_ak
+}
+
+```
+
+```{r}
+#Biden Alaska 
+
+b_func_ak<- function(a) { 
+  (a-a*.43570)/.43570}
+
+alaska<- 733583
+n<- 10000
+sample_size <- 1000
+resultsb_ak <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_ak<- rbeta(n,a,b_func_ak(a))
+pop_ak_b <- rbinom(alaska, size = 1, b_ak)
+
+for (i in 1:n) {
+  sample_ak_b <- sample(pop_ak_b, size = sample_size, replace = TRUE)
+  bwinsak <- (sample_ak_b == 1)
+  probabilityb_ak<- mean(bwinsak)
+  resultsb_ak[i]<- probabilityb_ak
+}
+
+
+```
+
+```{r}
+# Trump Arizona 
+
+t_func_az<- function(a) { 
+  (a-a*.46102)/.46102}
+
+arizona<- 7359197
+n<- 10000
+sample_size <- 1000
+resultst_az <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_az<- rbeta(n,a,t_func_az(a))
+pop_az_t <- rbinom(arizona, size = 1, t_az)
+
+for (i in 1:n) {
+  sample_az_t <- sample(pop_az_t, size = sample_size, replace = TRUE)
+  twinsaz <- (sample_az_t == 1)
+  probabilityt_az<- mean(twinsaz)
+  resultst_az[i]<- probabilityt_az
+}
+
+```
+
+```{r}
+# Biden Arizona 
+
+b_func_az<- function(a) { 
+  (a-a*.48705)/.48705}
+
+arizona<- 7359197
+n<- 10000
+sample_size <- 1000
+resultsb_az <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_az<- rbeta(n,a,b_func_az(a))
+pop_az_b <- rbinom(arizona, size = 1, b_az)
+
+for (i in 1:n) {
+  sample_az_b <- sample(pop_az_b, size = sample_size, replace = TRUE)
+  bwinsaz <- (sample_az_b == 1)
+  probabilityb_az<- mean(bwinsaz)
+  resultsb_az[i]<- probabilityb_az
+}
+
+```
+
+```{r}
+demaz<- tibble(resultsb_az)
+
+ggplot(demaz, aes(x= resultsb_az[,1])) + 
+  geom_histogram(bins = 30, color = "black", fill = "light blue") +
+   geom_vline(aes(xintercept = mean(resultsb_az)), color= "black", size = .5, linetype= "dashed") + 
+  theme(panel.background = element_rect(fill = "white", color = "black")) + 
+  ggtitle("Dem Votes in Arizona") + xlab("Votes") + ylab("Count")
+
+```
+
+```{r}
+# Trump Arkansas 
+
+t_func_ar<- function(a) { 
+  (a-a*.58949)/.58949}
+
+arkansas<- 3045637
+n<- 10000
+sample_size <- 1000
+resultst_ar <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_ar<- rbeta(n,a,t_func_ar(a))
+pop_ar_t <- rbinom(arkansas, size = 1, t_ar)
+
+for (i in 1:n) {
+  sample_ar_t <- sample(pop_ar_t, size = sample_size, replace = TRUE)
+  twinsar <- (sample_ar_t == 1)
+  probabilityt_ar<- mean(twinsar)
+  resultst_ar[i]<- probabilityt_ar
+}
+
+```
+
+```{r}
+# Biden Arkansas
+
+b_func_ar<- function(a) { 
+  (a-a*.36178)/.36178}
+
+arkansas<- 3045637
+n<- 10000
+sample_size <- 1000
+resultsb_ar <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_ar<- rbeta(n,a,b_func_ar(a))
+pop_ar_b <- rbinom(arkansas, size = 1, b_ar)
+
+for (i in 1:n) {
+  sample_ar_b <- sample(pop_ar_b, size = sample_size, replace = TRUE)
+  bwinsar <- (sample_ar_b == 1)
+  probabilityb_ar<- mean(bwinsar)
+  resultsb_ar[i]<- probabilityb_ar
+}
+
+```
+
+```{r}
+#Trump California
+
+t_func_cali<- function(a) { 
+  (a-a*.32436)/.32436}
+
+cali<- 39029342
+n<- 10000
+sample_size <- 1000
+resultst_cali <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_cal<- rbeta(n,a,t_func_cali(a))
+pop_cali_t <- rbinom(cali, size = 1, t_cal)
+
+for (i in 1:n) {
+  sample_cali_t <- sample(pop_cali_t, size = sample_size, replace = TRUE)
+  twinscali <- (sample_cali_t == 1)
+  probabilityt_cali<- mean(twinscali)
+  resultst_cali[i]<- probabilityt_cali
+}
+
+```
+
+```{r}
+#Biden California 
+
+b_func_cali<- function(a) { 
+  (a-a*.61625)/.61625}
+
+cali<- 39029342
+n<- 10000
+sample_size <- 1000
+resultsb_cali <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_cal<- rbeta(n,a,b_func_cali(a))
+pop_cali_b <- rbinom(cali, size = 1, b_cal)
+
+for (i in 1:n) {
+  sample_cali_b <- sample(pop_cali_b, size = sample_size, replace = TRUE)
+  bwinscali <- (sample_cali_b == 1)
+  probabilityb_cali<- mean(bwinscali)
+  resultsb_cali[i]<- probabilityb_cali
+}
+
+```
+
+```{r}
+#Trump in Colorado 
+
+t_func_co<- function(a) { 
+  (a-a*.41150)/.41150}
+
+CO<- 5839926
+n<- 10000
+sample_size <- 1000
+resultst_co <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_co<- rbeta(n,a,t_func_co(a))
+pop_co_t <- rbinom(CO, size = 1, t_co)
+
+for (i in 1:n) {
+  sample_co_t <- sample(pop_co_t, size = sample_size, replace = TRUE)
+  twinsco <- (sample_co_t == 1)
+  probabilityt_co<- mean(twinsco)
+  resultst_co[i]<- probabilityt_co
+}
+
+```
+
+```{r}
+#Biden Colorado 
+
+b_func_co<- function(a) { 
+  (a-a*.53605)/.53605}
+
+CO<- 5839926
+n<- 10000
+sample_size <- 1000
+resultsb_co <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_co<- rbeta(n,a,b_func_co(a))
+pop_co_b <- rbinom(CO, size = 1, b_co)
+
+for (i in 1:n) {
+  sample_co_b <- sample(pop_co_b, size = sample_size, replace = TRUE)
+  bwinsco <- (sample_co_b == 1)
+  probabilityb_co<- mean(bwinsco)
+  resultsb_co[i]<- probabilityb_co
+}
+
+```
+
+```{r}
+# Trump Connecticut
+
+t_func_ct<- function(a) { 
+  (a-a*.32366)/.32366}
+
+connecticut<- 3626205
+n<- 10000
+sample_size <- 1000
+resultst_ct <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_ct<- rbeta(n,a,t_func_ct(a))
+pop_ct_t <- rbinom(connecticut, size = 1, t_ct)
+
+for (i in 1:n) {
+  sample_ct_t <- sample(pop_ct_t, size = sample_size, replace = TRUE)
+  twinsct <- (sample_ct_t == 1)
+  probabilityt_ct<- mean(twinsct)
+  resultst_ct[i]<- probabilityt_ct
+}
+
+```
+
+```{r}
+# Biden Connecticut
+
+b_func_ct<- function(a) { 
+  (a-a*.58623)/.58623}
+
+connecticut<- 3626205
+n<- 10000
+sample_size <- 1000
+resultsb_ct <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_ct<- rbeta(n,a,b_func_ct(a))
+pop_ct_b <- rbinom(connecticut, size = 1, b_ct)
+
+for (i in 1:n) {
+  sample_ct_b <- sample(pop_ct_b, size = sample_size, replace = TRUE)
+  bwinsct <- (sample_ct_b == 1)
+  probabilityb_ct<- mean(bwinsct)
+  resultsb_ct[i]<- probabilityb_ct
+}
+
+```
+
+```{r}
+# Trump Delaware
+
+t_func_de<- function(a) { 
+  (a-a*.34603)/.34603}
+
+delaware<- 1018396
+n<- 10000
+sample_size <- 1000
+resultst_de <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_de<- rbeta(n,a,t_func_de(a))
+pop_de_t <- rbinom(delaware, size = 1, t_de)
+
+for (i in 1:n) {
+  sample_de_t <- sample(pop_de_t, size = sample_size, replace = TRUE)
+  twinsde <- (sample_de_t == 1)
+  probabilityt_de<- mean(twinsde)
+  resultst_de[i]<- probabilityt_de
+}
+
+```
+
+```{r}
+# Biden Delaware
+
+b_func_de<- function(a) { 
+  (a-a*.58855)/.58855}
+
+delaware<- 1018396
+n<- 10000
+sample_size <- 1000
+resultsb_de <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_de<- rbeta(n,a,b_func_de(a))
+pop_de_b <- rbinom(delaware, size = 1, b_de)
+
+for (i in 1:n) {
+  sample_de_b <- sample(pop_de_b, size = sample_size, replace = TRUE)
+  bwinsde <- (sample_de_b == 1)
+  probabilityb_de<- mean(bwinsde)
+  resultsb_de[i]<- probabilityb_de
+}
+
+```
+
+```{r}
+# Trump DC
+
+t_func_dc<- function(a) { 
+  (a-a*.05783)/.05783}
+
+dc<- 670803
+n<- 10000
+sample_size <- 1000
+resultst_dc <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_dc<- rbeta(n,a,t_func_dc(a))
+pop_dc_t <- rbinom(dc, size = 1, t_dc)
+
+for (i in 1:n) {
+  sample_dc_t <- sample(pop_dc_t, size = sample_size, replace = TRUE)
+  twinsdc <- (sample_dc_t == 1)
+  probabilityt_dc<- mean(twinsdc)
+  resultst_dc[i]<- probabilityt_dc
+}
+
+```
+
+```{r}
+# Biden DC
+
+b_func_dc<- function(a) { 
+  (a-a*.90773)/.90773}
+
+dc<- 670803
+n<- 10000
+sample_size <- 1000
+resultsb_dc <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_dc<- rbeta(n,a,b_func_dc(a))
+pop_dc_b <- rbinom(dc, size = 1, b_dc)
+
+for (i in 1:n) {
+  sample_dc_b <- sample(pop_dc_b, size = sample_size, replace = TRUE)
+  bwinsdc <- (sample_dc_b == 1)
+  probabilityb_dc<- mean(bwinsdc)
+  resultsb_dc[i]<- probabilityb_dc
+}
+```
+
+```{r}
+# Trump Florida
+
+t_func_fl<- function(a) { 
+  (a-a*.46619)/.46619}
+
+florida<- 22244823
+n<- 10000
+sample_size <- 1000
+resultst_fl <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_fl<- rbeta(n,a,t_func_fl(a))
+pop_fl_t <- rbinom(florida, size = 1, t_fl)
+
+for (i in 1:n) {
+  sample_fl_t <- sample(pop_fl_t, size = sample_size, replace = TRUE)
+  twinsfl <- (sample_fl_t == 1)
+  probabilityt_fl<- mean(twinsfl)
+  resultst_fl[i]<- probabilityt_fl
+}
+
+```
+
+```{r}
+# Biden Florida
+
+b_func_fl<- function(a) { 
+  (a-a*.49080)/.49080}
+
+florida<- 22244823
+n<- 10000
+sample_size <- 1000
+resultsb_fl <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_fl<- rbeta(n,a,b_func_fl(a))
+pop_fl_b <- rbinom(florida, size = 1, b_fl)
+
+for (i in 1:n) {
+  sample_fl_b <- sample(pop_fl_b, size = sample_size, replace = TRUE)
+  bwinsfl <- (sample_fl_b == 1)
+  probabilityb_fl<- mean(bwinsfl)
+  resultsb_fl[i]<- probabilityb_fl
+}
+```
+
+```{r}
+# Trump Georgia 
+
+t_func_ga<- function(a) { 
+  (a-a*.47367)/.47367}
+
+georgia<- 10912876
+n<- 10000
+sample_size <- 1000
+resultst_ga <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_ga<- rbeta(n,a,t_func_ga(a))
+pop_ga_t <- rbinom(georgia, size = 1, t_ga)
+
+for (i in 1:n) {
+  sample_ga_t <- sample(pop_ga_t, size = sample_size, replace = TRUE)
+  twinsga <- (sample_ga_t == 1)
+  probabilityt_ga<- mean(twinsga)
+  resultst_ga[i]<- probabilityt_ga
+}
+
+```
+
+```{r}
+# Biden Georgia 
+
+b_func_ga<- function(a) { 
+  (a-a*.48540)/.48540}
+
+georgia<- 10912876
+n<- 10000
+sample_size <- 1000
+resultsb_ga <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_ga<- rbeta(n,a,b_func_ga(a))
+pop_ga_b <- rbinom(georgia, size = 1, b_ga)
+
+for (i in 1:n) {
+  sample_ga_b <- sample(pop_ga_b, size = sample_size, replace = TRUE)
+  bwinsga <- (sample_ga_b == 1)
+  probabilityb_ga<- mean(bwinsga)
+  resultsb_ga[i]<- probabilityb_ga
+}
+
+```
+
+```{r}
+# Trump Hawaii
+
+t_func_ha<- function(a) { 
+  (a-a*.29959)/.29959}
+
+hawaii<- 1440196
+n<- 10000
+sample_size <- 1000
+resultst_ha <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_ha<- rbeta(n,a,t_func_ha(a))
+pop_ha_t <- rbinom(hawaii, size = 1, t_ha)
+
+for (i in 1:n) {
+  sample_ha_t <- sample(pop_ha_t, size = sample_size, replace = TRUE)
+  twinsha <- (sample_ha_t == 1)
+  probabilityt_ha<- mean(twinsha)
+  resultst_ha[i]<- probabilityt_ha
+}
+
+```
+
+```{r}
+# Biden Hawaii
+
+b_func_ha<- function(a) { 
+  (a-a*.64306)/.64306}
+
+hawaii<- 1440196
+n<- 10000
+sample_size <- 1000
+resultsb_ha <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_ha<- rbeta(n,a,b_func_ha(a))
+pop_ha_b <- rbinom(hawaii, size = 1, b_ha)
+
+for (i in 1:n) {
+  sample_ha_b <- sample(pop_ha_b, size = sample_size, replace = TRUE)
+  bwinsha <- (sample_ha_b == 1)
+  probabilityb_ha<- mean(bwinsha)
+  resultsb_ha[i]<- probabilityb_ha
+}
+
+```
+
+```{r}
+# Trump Idaho
+
+t_func_id<- function(a) { 
+  (a-a*.56589)/.56589}
+
+idaho<- 1939033
+n<- 10000
+sample_size <- 1000
+resultst_id <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_id<- rbeta(n,a,t_func_id(a))
+pop_id_t <- rbinom(idaho, size = 1, t_id)
+
+for (i in 1:n) {
+  sample_id_t <- sample(pop_id_t, size = sample_size, replace = TRUE)
+  twinsid <- (sample_id_t == 1)
+  probabilityt_id<- mean(twinsid)
+  resultst_id[i]<- probabilityt_id
+}
+
+```
+
+```{r}
+# Biden Idaho
+
+b_func_id<- function(a) { 
+  (a-a*.38451)/.38451}
+
+idaho<- 1939033
+n<- 10000
+sample_size <- 1000
+resultsb_id <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_id<- rbeta(n,a,b_func_id(a))
+pop_id_b <- rbinom(idaho, size = 1, b_id)
+
+for (i in 1:n) {
+  sample_id_b <- sample(pop_id_b, size = sample_size, replace = TRUE)
+  bwinsid <- (sample_id_b == 1)
+  probabilityb_id<- mean(bwinsid)
+  resultsb_id[i]<- probabilityb_id
+}
+
+```
+
+```{r}
+# Trump Illinois
+
+t_func_il<- function(a) { 
+  (a-a*.39009)/.39009}
+
+illinois<- 12582032
+n<- 10000
+sample_size <- 1000
+resultst_il <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_il<- rbeta(n,a,t_func_il(a))
+pop_il_t <- rbinom(illinois, size = 1, t_il)
+
+for (i in 1:n) {
+  sample_il_t <- sample(pop_il_t, size = sample_size, replace = TRUE)
+  twinsil <- (sample_il_t == 1)
+  probabilityt_il<- mean(twinsil)
+  resultst_il[i]<- probabilityt_il
+}
+
+```
+
+```{r}
+# Biden Illinois
+
+b_func_il<- function(a) { 
+  (a-a*.55020)/.55020}
+
+illinois<- 12582032
+n<- 10000
+sample_size <- 1000
+resultsb_il <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_il<- rbeta(n,a,b_func_il(a))
+pop_il_b <- rbinom(illinois, size = 1, b_il)
+
+for (i in 1:n) {
+  sample_il_b <- sample(pop_il_b, size = sample_size, replace = TRUE)
+  bwinsil <- (sample_il_b == 1)
+  probabilityb_il<- mean(bwinsil)
+  resultsb_il[i]<- probabilityb_il
+}
+
+```
+
+```{r}
+# Trump Indiana
+
+t_func_in<- function(a) { 
+  (a-a*.52853)/.52853}
+
+indiana<- 6833037
+n<- 10000
+sample_size <- 1000
+resultst_in <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_in<- rbeta(n,a,t_func_in(a))
+pop_in_t <- rbinom(indiana, size = 1, t_in)
+
+for (i in 1:n) {
+  sample_in_t <- sample(pop_in_t, size = sample_size, replace = TRUE)
+  twinsin <- (sample_in_t == 1)
+  probabilityt_in<- mean(twinsin)
+  resultst_in[i]<- probabilityt_in
+}
+
+```
+
+```{r}
+# Biden Indiana
+
+b_func_in<- function(a) { 
+  (a-a*.42033)/.42033}
+
+indiana<- 6833037
+n<- 10000
+sample_size <- 1000
+resultsb_in <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_in<- rbeta(n,a,b_func_in(a))
+pop_in_b <- rbinom(indiana, size = 1, b_in)
+
+for (i in 1:n) {
+  sample_in_b <- sample(pop_in_b, size = sample_size, replace = TRUE)
+  bwinsin <- (sample_in_b == 1)
+  probabilityb_in<- mean(bwinsin)
+  resultsb_in[i]<- probabilityb_in
+}
+
+```
+
+```{r}
+# Trump Iowa
+
+t_func_ia<- function(a) { 
+  (a-a*.47595)/.47595}
+
+iowa<- 3200517
+n<- 10000
+sample_size <- 1000
+resultst_ia <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_ia<- rbeta(n,a,t_func_ia(a))
+pop_ia_t <- rbinom(iowa, size = 1, t_ia)
+
+for (i in 1:n) {
+  sample_ia_t <- sample(pop_ia_t, size = sample_size, replace = TRUE)
+  twinsia <- (sample_ia_t == 1)
+  probabilityt_ia<- mean(twinsia)
+  resultst_ia[i]<- probabilityt_ia
+}
+
+```
+
+```{r}
+# Biden Iowa
+
+b_func_ia<- function(a) { 
+  (a-a*.46311)/.46311}
+
+iowa<- 3200517
+n<- 10000
+sample_size <- 1000
+resultsb_ia <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_ia<- rbeta(n,a,b_func_ia(a))
+pop_ia_b <- rbinom(iowa, size = 1, b_ia)
+
+for (i in 1:n) {
+  sample_ia_b <- sample(pop_ia_b, size = sample_size, replace = TRUE)
+  bwinsia <- (sample_ia_b == 1)
+  probabilityb_ia<- mean(bwinsia)
+  resultsb_ia[i]<- probabilityb_ia
+}
+
+```
+
+```{r}
+# Trump Kansas
+
+t_func_ks<- function(a) { 
+  (a-a*.53863)/.53863}
+
+kansas<- 2937150
+n<- 10000
+sample_size <- 1000
+resultst_ks <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+t_ks<- rbeta(n,a,t_func_ks(a))
+pop_ks_t <- rbinom(kansas, size = 1, t_ks)
+
+for (i in 1:n) {
+  sample_ks_t <- sample(pop_ks_t, size = sample_size, replace = TRUE)
+  twinsks <- (sample_ks_t == 1)
+  probabilityt_ks<- mean(twinsks)
+  resultst_ks[i]<- probabilityt_ks
+}
+
+```
+
+```{r}
+# Biden Kansas
+
+b_func_ks<- function(a) { 
+  (a-a*.40953)/.40953}
+
+kansas<- 2937150
+n<- 10000
+sample_size <- 1000
+resultsb_ks <- matrix(0, nrow = n, ncol = 1)
+
+a<- 10
+b_ks<- rbeta(n,a,b_func_ks(a))
+pop_ks_b <- rbinom(kansas, size = 1, b_ks)
+
+for (i in 1:n) {
+  sample_ks_b <- sample(pop_ks_b, size = sample_size, replace = TRUE)
+  bwinsks <- (sample_ks_b == 1)
+  probabilityb_ks<- mean(bwinsks)
+  resultsb_ks[i]<- probabilityb_ks
+}
+
+```
+
 # Electoral College Count
+```{r}
+
+electoraldem <- matrix(0, nrow = 17, ncol = 1)
+electoralrep<- matrix(0, nrow = 17, ncol = 1)
+
+aldem<- sample(resultsb_alab,1)
+alrep<- sample(resultst_alab,1)
+
+akdem<- sample(resultsb_ak,1)
+akrep<- sample(resultst_ak,1)
+
+azdem<- sample(resultsb_az,1)
+azrep<- sample(resultst_az,1)
+
+ardem<- sample(resultsb_ar,1)
+arrep<- sample(resultst_ar,1)
+
+cadem<- sample(resultsb_cali,1)
+carep<- sample(resultst_cali,1)
+
+codem<- sample(resultsb_co,1)
+corep<- sample(resultst_co,1)
+
+ctdem<- sample(resultsb_ct,1)
+ctrep<- sample(resultst_ct,1)
+
+dcdem<- sample(resultsb_dc,1)
+dcrep<- sample(resultst_dc,1)
+
+dedem<- sample(resultsb_de,1)
+derep<- sample(resultst_de,1)
+
+fldem<- sample(resultsb_fl,1)
+flrep<- sample(resultst_fl,1)
+
+gadem<- sample(resultsb_ga,1)
+garep<- sample(resultst_ga,1)
+
+hadem<- sample(resultsb_ha,1)
+harep<- sample(resultst_ha,1)
+
+iadem<- sample(resultsb_ia,1)
+iarep<- sample(resultst_ia,1)
+
+iddem<- sample(resultsb_id,1)
+idrep<- sample(resultst_id,1)
+
+ildem<- sample(resultsb_il,1)
+ilrep<- sample(resultst_il,1)
+
+indem<- sample(resultsb_in,1)
+inrep<- sample(resultst_in,1)
+
+ksdem<- sample(resultsb_ks,1)
+ksrep<- sample(resultst_ks,1)
+
+if (ksdem > ksrep) {
+  electoraldem[1,] <-  6
+} else {
+  electoralrep[1,]<-  6
+}
+
+if (indem > inrep) {
+  electoraldem[2,] <-  11
+} else {
+  electoralrep[2,]<-  11
+}
+
+if (ildem > ilrep) {
+  electoraldem[3,] <-  19
+} else {
+  electoralrep[3,]<-  19
+}
+
+if (iddem > idrep) {
+  electoraldem[4,] <-  4
+} else {
+  electoralrep[4,]<-  4
+}
+
+if (iadem > iarep) {
+  electoraldem[5,] <-  6
+} else {
+  electoralrep[5,]<-  6
+}
+
+if (hadem > harep) {
+  electoraldem[6,] <-  4
+} else {
+  electoralrep[6,]<-  4
+}
+
+if (gadem > garep) {
+  electoraldem[7,] <-  16
+} else {
+  electoralrep[7,]<-  16
+}
+
+if (fldem > flrep) {
+  electoraldem[8,] <-  30
+} else {
+  electoralrep[8,]<-  30
+}
+
+if (dedem > derep) {
+  electoraldem[9,] <-  3
+} else {
+  electoralrep[9,]<-  3
+}
+
+if (dcdem > dcrep) {
+  electoraldem[10,] <-  3
+} else {
+  electoralrep[10,]<-  3
+}
+
+if (ctdem > ctrep) {
+  electoraldem[11,] <-  7
+} else {
+  electoralrep[11,]<-  7
+}
+
+if (codem > corep) {
+  electoraldem[12,] <-  10
+} else {
+  electoralrep[12,]<-  10
+}
+
+if (cadem > carep) {
+  electoraldem[13,] <-  54
+} else {
+  electoralrep[13,]<-  54
+}
+
+if (azdem > azrep) {
+  electoraldem[14,] <-  11
+} else {
+  electoralrep[14,]<- 11
+}
+
+if (ardem > arrep) {
+  electoraldem[15,] <-  6
+} else {
+  electoralrep[15,]<-  6
+}
+
+if (aldem > alrep) {
+  electoraldem[16,] <-  9
+} else {
+  electoralrep[16,]<-  9
+}
+
+if (akdem > akrep) {
+  electoraldem[17,] <-  3
+} else {
+  electoralrep[17,]<-  3
+}
+
+```
