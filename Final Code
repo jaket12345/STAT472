@@ -1,4 +1,558 @@
 # packages
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(broom)
+
+# constants
+n <- 10000
+sample_size <- 1000
+a <- 10
 
 # state pop. counts
 
+n_d <- 779261
+ohio <- 11756058
+oklahoma <- 4019800
+oregon <- 4240137
+penn <- 12972008
+r_i <- 1093734
+south_carolina <- 5282634
+s_d <- 909824
+tenn <- 7051339
+texas <- 30029572
+utah <- 3380800
+vermont <- 647064
+virginia <- 8683619
+wash <- 7785786
+w_v <- 1775156
+wisconsin <- 5892539
+wyo <- 581381
+
+## n.d.
+b_func_nd_rep <- function(a) { 
+  (a-a*.56036)/.56036}
+
+results_nd_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_nd_rep <- rbeta(n,a,b_func_nd_rep(a))
+pop_nd_rep <- rbinom(n_d, size = 1, bi_nd_rep)
+
+for (i in 1:n) {
+  sample_nd <- sample(pop_nd_rep, size = sample_size, replace = TRUE)
+  bwinsnd <- (sample_nd == 1)
+  probability_nd_rep <- mean(bwinsnd)
+  results_nd_rep[i]<- probability_nd_rep
+}
+
+b_func_nd_dem <- function(a) { 
+  (a-a*.38722)/.38722}
+
+results_nd_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_nd_dem <- rbeta(n,a,b_func_nd_dem(a))
+pop_nd_dem <- rbinom(n_d, size = 1, bi_nd_dem)
+
+for (i in 1:n) {
+  sample_nd_dem <- sample(pop_nd_dem, size = sample_size, replace = TRUE)
+  bwinsnd_dem <- (sample_nd_dem == 1)
+  probability_nd_dem <- mean(bwinsnd_dem)
+  results_nd_dem[i] <- probability_nd_dem
+}
+
+## ohio
+b_func_ohio_rep <- function(a) { 
+  (a-a*.47527)/.47527}
+
+results_ohio_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_ohio_rep <- rbeta(n,a,b_func_ohio_rep(a))
+pop_ohio_rep <- rbinom(ohio, size = 1, bi_ohio_rep)
+
+for (i in 1:n) {
+  sample_ohio <- sample(pop_ohio_rep, size = sample_size, replace = TRUE)
+  bwinsohio <- (sample_ohio == 1)
+  probability_ohio_rep <- mean(bwinsohio)
+  results_ohio_rep[i]<- probability_ohio_rep
+}
+
+b_func_ohio_dem <- function(a) { 
+  (a-a*.46772)/.46772}
+
+results_ohio_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_ohio_dem <- rbeta(n,a,b_func_ohio_dem(a))
+pop_ohio_dem <- rbinom(ohio, size = 1, bi_ohio_dem)
+
+for (i in 1:n) {
+  sample_ohio_dem <- sample(pop_ohio_dem, size = sample_size, replace = TRUE)
+  bwinsohio_dem <- (sample_ohio_dem == 1)
+  probability_ohio_dem <- mean(bwinsohio_dem)
+  results_ohio_dem[i] <- probability_ohio_dem
+}
+
+## oklahoma
+b_func_ok_rep <- function(a) { 
+  (a-a*.59183)/.59183}
+
+results_ok_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_ok_rep <- rbeta(n,a,b_func_ok_rep(a))
+pop_ok_rep <- rbinom(oklahoma, size = 1, bi_ok_rep)
+
+for (i in 1:n) {
+  sample_ok <- sample(pop_ok_rep, size = sample_size, replace = TRUE)
+  bwinsok <- (sample_ok == 1)
+  probability_ok_rep <- mean(bwinsok)
+  results_ok_rep[i]<- probability_ok_rep
+}
+
+b_func_ok_dem <- function(a) { 
+  (a-a*.36223)/.36223}
+
+results_ok_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_ok_dem <- rbeta(n,a,b_func_ok_dem(a))
+pop_ok_dem <- rbinom(oklahoma, size = 1, bi_ok_dem)
+
+for (i in 1:n) {
+  sample_ok_dem <- sample(pop_ok_dem, size = sample_size, replace = TRUE)
+  bwinsok_dem <- (sample_ok_dem == 1)
+  probability_ok_dem <- mean(bwinsok_dem)
+  results_ok_dem[i] <- probability_ok_dem
+}
+
+## oregon
+b_func_or_rep <- function(a) { 
+  (a-a*.37432)/.37432}
+
+results_or_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_or_rep <- rbeta(n,a,b_func_or_rep(a))
+pop_or_rep <- rbinom(oregon, size = 1, bi_or_rep)
+
+for (i in 1:n) {
+  sample_or <- sample(pop_or_rep, size = sample_size, replace = TRUE)
+  bwinsor <- (sample_or == 1)
+  probability_or_rep <- mean(bwinsor)
+  results_or_rep[i]<- probability_or_rep
+}
+
+b_func_or_dem <- function(a) { 
+  (a-a*.58704)/.58704}
+
+results_or_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_or_dem <- rbeta(n,a,b_func_or_dem(a))
+pop_or_dem <- rbinom(oregon, size = 1, bi_or_dem)
+
+for (i in 1:n) {
+  sample_or_dem <- sample(pop_or_dem, size = sample_size, replace = TRUE)
+  bwinsor_dem <- (sample_or_dem == 1)
+  probability_or_dem <- mean(bwinsor_dem)
+  results_or_dem[i] <- probability_or_dem
+}
+
+## pennysylvania
+b_func_pa_rep <- function(a) { 
+  (a-a*.4555)/.4555}
+
+results_pa_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_pa_rep <- rbeta(n,a,b_func_pa_rep(a))
+pop_pa_rep <- rbinom(penn, size = 1, bi_pa_rep)
+
+for (i in 1:n) {
+  sample_pa <- sample(pop_pa_rep, size = sample_size, replace = TRUE)
+  bwinspa <- (sample_pa == 1)
+  probability_pa_rep <- mean(bwinspa)
+  results_pa_rep[i]<- probability_pa_rep
+}
+
+b_func_pa_dem <- function(a) { 
+  (a-a*.50204)/.50204}
+
+results_pa_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_pa_dem <- rbeta(n,a,b_func_pa_dem(a))
+pop_pa_dem <- rbinom(penn, size = 1, bi_pa_dem)
+
+for (i in 1:n) {
+  sample_pa_dem <- sample(pop_pa_dem, size = sample_size, replace = TRUE)
+  bwinspa_dem <- (sample_pa_dem == 1)
+  probability_pa_dem <- mean(bwinspa_dem)
+  results_pa_dem[i] <- probability_pa_dem
+}
+
+## rhode island
+b_func_ri_rep <- function(a) { 
+  (a-a*.32364)/.32364}
+
+results_ri_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_ri_rep <- rbeta(n,a,b_func_ri_rep(a))
+pop_ri_rep <- rbinom(r_i, size = 1, bi_ri_rep)
+
+for (i in 1:n) {
+  sample_ri <- sample(pop_ri_rep, size = sample_size, replace = TRUE)
+  bwinsri <- (sample_ri == 1)
+  probability_ri_rep <- mean(bwinsri)
+  results_ri_rep[i]<- probability_ri_rep
+}
+
+b_func_ri_dem <- function(a) { 
+  (a-a*.62929)/.62929}
+
+results_ri_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_ri_dem <- rbeta(n,a,b_func_ri_dem(a))
+pop_ri_dem <- rbinom(r_i, size = 1, bi_ri_dem)
+
+for (i in 1:n) {
+  sample_ri_dem <- sample(pop_ri_dem, size = sample_size, replace = TRUE)
+  bwinsri_dem <- (sample_ri_dem == 1)
+  probability_ri_dem <- mean(bwinsri_dem)
+  results_ri_dem[i] <- probability_ri_dem
+}
+
+## south carolina
+b_func_sc_rep <- function(a) { 
+  (a-a*.5159)/.5159}
+
+results_sc_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_sc_rep <- rbeta(n,a,b_func_sc_rep(a))
+pop_sc_rep <- rbinom(south_carolina, size = 1, bi_sc_rep)
+
+for (i in 1:n) {
+  sample_sc <- sample(pop_sc_rep, size = sample_size, replace = TRUE)
+  bwinssc <- (sample_sc == 1)
+  probability_sc_rep <- mean(bwinssc)
+  results_sc_rep[i]<- probability_sc_rep
+}
+
+b_func_sc_dem <- function(a) { 
+  (a-a*.44508)/.44508}
+
+results_sc_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_sc_dem <- rbeta(n,a,b_func_sc_dem(a))
+pop_sc_dem <- rbinom(south_carolina, size = 1, bi_sc_dem)
+
+for (i in 1:n) {
+  sample_sc_dem <- sample(pop_sc_dem, size = sample_size, replace = TRUE)
+  bwinssc_dem <- (sample_sc_dem == 1)
+  probability_sc_dem <- mean(bwinssc_dem)
+  results_sc_dem[i] <- probability_sc_dem
+}
+
+## south dakota
+b_func_sd_rep <- function(a) { 
+  (a-a*.54486)/.54486}
+
+results_sd_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_sd_rep <- rbeta(n,a,b_func_sd_rep(a))
+pop_sd_rep <- rbinom(s_d, size = 1, bi_sd_rep)
+
+for (i in 1:n) {
+  sample_sd <- sample(pop_sd_rep, size = sample_size, replace = TRUE)
+  bwinssd <- (sample_sd == 1)
+  probability_sd_rep <- mean(bwinssd)
+  results_sd_rep[i]<- probability_sd_rep
+}
+
+b_func_sd_dem <- function(a) { 
+  (a-a*.39042)/.39042}
+
+results_sd_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_sd_dem <- rbeta(n,a,b_func_sd_dem(a))
+pop_sd_dem <- rbinom(s_d, size = 1, bi_sd_dem)
+
+for (i in 1:n) {
+  sample_sd_dem <- sample(pop_sd_dem, size = sample_size, replace = TRUE)
+  bwinssd_dem <- (sample_sd_dem == 1)
+  probability_sd_dem <- mean(bwinssd_dem)
+  results_sd_dem[i] <- probability_sd_dem
+}
+
+## Tennessee
+b_func_tn_rep <- function(a) { 
+  (a-a*.55117)/.55117}
+
+results_tn_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_tn_rep <- rbeta(n,a,b_func_tn_rep(a))
+pop_tn_rep <- rbinom((tenn), size = 1, bi_tn_rep)
+
+for (i in 1:n) {
+  sample_tn <- sample(pop_tn_rep, size = sample_size, replace = TRUE)
+  bwinstn <- (sample_tn == 1)
+  probability_tn_rep <- mean(bwinstn)
+  results_tn_rep[i]<- probability_tn_rep
+}
+
+b_func_tn_dem <- function(a) { 
+  (a-a*.41424)/.41424}
+
+results_tn_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_tn_dem <- rbeta(n,a,b_func_tn_dem(a))
+pop_tn_dem <- rbinom(tenn, size = 1, bi_tn_dem)
+
+for (i in 1:n) {
+  sample_tn_dem <- sample(pop_tn_dem, size = sample_size, replace = TRUE)
+  bwinstn_dem <- (sample_tn_dem == 1)
+  probability_tn_dem <- mean(bwinstn_dem)
+  results_tn_dem[i] <- probability_tn_dem
+}
+
+## Texas
+b_func_tx_rep <- function(a) { 
+  (a-a*.48588)/.48588}
+
+results_tx_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_tx_rep <- rbeta(n,a,b_func_tx_rep(a))
+pop_tx_rep <- rbinom(texas, size = 1, bi_tx_rep)
+
+for (i in 1:n) {
+  sample_tx <- sample(pop_tx_rep, size = sample_size, replace = TRUE)
+  bwinstx <- (sample_tx == 1)
+  probability_tx_rep <- mean(bwinstx)
+  results_tx_rep[i]<- probability_tx_rep
+}
+
+b_func_tx_dem <- function(a) { 
+  (a-a*.47448)/.47448}
+
+results_tx_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_tx_dem <- rbeta(n,a,b_func_tx_dem(a))
+pop_tx_dem <- rbinom(texas, size = 1, bi_tx_dem)
+
+for (i in 1:n) {
+  sample_tx_dem <- sample(pop_tx_dem, size = sample_size, replace = TRUE)
+  bwinstx_dem <- (sample_tx_dem == 1)
+  probability_tx_dem <- mean(bwinstx_dem)
+  results_tx_dem[i] <- probability_tx_dem
+}
+
+## Utah
+b_func_ut_rep <- function(a) { 
+  (a-a*.5192)/.5192}
+
+results_ut_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_ut_rep <- rbeta(n,a,b_func_ut_rep(a))
+pop_ut_rep <- rbinom(utah, size = 1, bi_ut_rep)
+
+for (i in 1:n) {
+  sample_ut <- sample(pop_ut_rep, size = sample_size, replace = TRUE)
+  bwinsut <- (sample_ut == 1)
+  probability_ut_rep <- mean(bwinsut)
+  results_ut_rep[i]<- probability_ut_rep
+}
+
+b_func_ut_dem <- function(a) { 
+  (a-a*.42075)/.42075}
+
+results_ut_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_ut_dem <- rbeta(n,a,b_func_ut_dem(a))
+pop_ut_dem <- rbinom(utah, size = 1, bi_ut_dem)
+
+for (i in 1:n) {
+  sample_ut_dem <- sample(pop_ut_dem, size = sample_size, replace = TRUE)
+  bwinsut_dem <- (sample_ut_dem == 1)
+  probability_ut_dem <- mean(bwinsut_dem)
+  results_ut_dem[i] <- probability_ut_dem
+}
+
+## Vermont
+b_func_vt_rep <- function(a) { 
+  (a-a*.27771)/.27771}
+
+results_vt_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_vt_rep <- rbeta(n,a,b_func_vt_rep(a))
+pop_vt_rep <- rbinom(vermont, size = 1, bi_vt_rep)
+
+for (i in 1:n) {
+  sample_vt<- sample(pop_vt_rep, size = sample_size, replace = TRUE)
+  bwinsvt <- (sample_vt == 1)
+  probability_vt_rep <- mean(bwinsvt)
+  results_vt_rep[i]<- probability_vt_rep
+}
+
+b_func_vt_dem <- function(a) { 
+  (a-a*.66516)/.66516}
+
+results_vt_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_vt_dem <- rbeta(n,a,b_func_vt_dem(a))
+pop_vt_dem <- rbinom(vermont, size = 1, bi_vt_dem)
+
+for (i in 1:n) {
+  sample_vt_dem <- sample(pop_vt_dem, size = sample_size, replace = TRUE)
+  bwinsvt_dem <- (sample_vt_dem == 1)
+  probability_vt_dem <- mean(bwinsvt_dem)
+  results_vt_dem[i] <- probability_vt_dem
+}
+
+## Virginia
+b_func_va_rep <- function(a) { 
+  (a-a*.41901)/.41901}
+
+results_va_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_va_rep <- rbeta(n,a,b_func_va_rep(a))
+pop_va_rep <- rbinom(virginia, size = 1, bi_va_rep)
+
+for (i in 1:n) {
+  sample_va <- sample(pop_va_rep, size = sample_size, replace = TRUE)
+  bwinsva <- (sample_va == 1)
+  probability_va_rep <- mean(bwinsva)
+  results_va_rep[i]<- probability_va_rep
+}
+
+b_func_va_dem <- function(a) { 
+  (a-a*.53721)/.53721}
+
+results_va_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_va_dem <- rbeta(n,a,b_func_va_dem(a))
+pop_va_dem <- rbinom(virginia, size = 1, bi_va_dem)
+
+for (i in 1:n) {
+  sample_va_dem <- sample(pop_va_dem, size = sample_size, replace = TRUE)
+  bwinsva_dem <- (sample_va_dem == 1)
+  probability_va_dem <- mean(bwinsva_dem)
+  results_va_dem[i] <- probability_va_dem
+}
+
+## Washington
+b_func_wa_rep <- function(a) { 
+  (a-a*.36444)/.36444}
+
+results_wa_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_wa_rep <- rbeta(n,a,b_func_wa_rep(a))
+pop_wa_rep <- rbinom((wash), size = 1, bi_wa_rep)
+
+for (i in 1:n) {
+  sample_wa <- sample(pop_wa_rep, size = sample_size, replace = TRUE)
+  bwinswa <- (sample_wa == 1)
+  probability_wa_rep <- mean(bwinswa)
+  results_wa_rep[i]<- probability_wa_rep
+}
+
+b_func_wa_dem <- function(a) { 
+  (a-a*.59394)/.59394}
+
+results_wa_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_wa_dem <- rbeta(n,a,b_func_wa_dem(a))
+pop_wa_dem <- rbinom(wash, size = 1, bi_wa_dem)
+
+for (i in 1:n) {
+  sample_wa_dem <- sample(pop_wa_dem, size = sample_size, replace = TRUE)
+  bwinswa_dem <- (sample_wa_dem == 1)
+  probability_wa_dem <- mean(bwinswa_dem)
+  results_wa_dem[i] <- probability_wa_dem
+}
+
+## West Virginia
+b_func_wv_rep <- function(a) { 
+  (a-a*.61896)/.61896}
+
+results_wv_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_wv_rep <- rbeta(n,a,b_func_wv_rep(a))
+pop_wv_rep <- rbinom((w_v), size = 1, bi_wv_rep)
+
+for (i in 1:n) {
+  sample_wv <- sample(pop_wv_rep, size = sample_size, replace = TRUE)
+  bwinswv <- (sample_wv == 1)
+  probability_wv_rep <- mean(bwinswv)
+  results_wv_rep[i]<- probability_wv_rep
+}
+
+b_func_wv_dem <- function(a) { 
+  (a-a*.33491)/.33491}
+
+results_wv_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_wv_dem <- rbeta(n,a,b_func_wv_dem(a))
+pop_wv_dem <- rbinom(w_v, size = 1, bi_wv_dem)
+
+for (i in 1:n) {
+  sample_wv_dem <- sample(pop_wv_dem, size = sample_size, replace = TRUE)
+  bwinswv_dem <- (sample_wv_dem == 1)
+  probability_wv_dem <- mean(bwinswv_dem)
+  results_wv_dem[i] <- probability_wv_dem
+}
+
+## Wisconsin
+b_func_wi_rep <- function(a) { 
+  (a-a*.43666)/.43666}
+
+results_wi_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_wi_rep <- rbeta(n,a,b_func_wi_rep(a))
+pop_wi_rep <- rbinom((wisconsin), size = 1, bi_wi_rep)
+
+for (i in 1:n) {
+  sample_wi <- sample(pop_wi_rep, size = sample_size, replace = TRUE)
+  bwinswi <- (sample_wi == 1)
+  probability_wi_rep <- mean(bwinswi)
+  results_wi_rep[i]<- probability_wi_rep
+}
+
+b_func_wi_dem <- function(a) { 
+  (a-a*.52126)/.52126}
+
+results_wi_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_wi_dem <- rbeta(n,a,b_func_wi_dem(a))
+pop_wi_dem <- rbinom(wisconsin, size = 1, bi_wi_dem)
+
+for (i in 1:n) {
+  sample_wi_dem <- sample(pop_wi_dem, size = sample_size, replace = TRUE)
+  bwinswi_dem <- (sample_wi_dem == 1)
+  probability_wi_dem <- mean(bwinswi_dem)
+  results_wi_dem[i] <- probability_wi_dem
+}
+
+
+## Wyoming
+b_func_wy_rep <- function(a) { 
+  (a-a*.6231)/.6231}
+
+results_wy_rep <- matrix(0, nrow = n, ncol = 1) 
+
+bi_wy_rep <- rbeta(n,a,b_func_wy_rep(a))
+pop_wy_rep <- rbinom((wyo), size = 1, bi_wy_rep)
+
+for (i in 1:n) {
+  sample_wy <- sample(pop_wy_rep, size = sample_size, replace = TRUE)
+  bwinswy <- (sample_wy == 1)
+  probability_wy_rep <- mean(bwinswy)
+  results_wy_rep[i]<- probability_wy_rep
+}
+
+b_func_wy_dem <- function(a) { 
+  (a-a*.3083)/.3083}
+
+results_wy_dem <- matrix(0, nrow = n, ncol = 1) 
+
+bi_wy_dem <- rbeta(n,a,b_func_wy_dem(a))
+pop_wy_dem <- rbinom(wyo, size = 1, bi_wy_dem)
+
+for (i in 1:n) {
+  sample_wy_dem <- sample(pop_wy_dem, size = sample_size, replace = TRUE)
+  bwinswy_dem <- (sample_wy_dem == 1)
+  probability_wy_dem <- mean(bwinswy_dem)
+  results_wy_dem[i] <- probability_wy_dem
+}
