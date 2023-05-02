@@ -604,10 +604,6 @@ for (i in 1:n) {
   resultsb_alab[i]<- probabilityb_alab
 }
 
-```
-
-
-```{r}
 #Trump Alaska 
 
 t_func_ak<- function(a) { 
@@ -629,9 +625,6 @@ for (i in 1:n) {
   resultst_ak[i]<- probabilityt_ak
 }
 
-```
-
-```{r}
 #Biden Alaska 
 
 b_func_ak<- function(a) { 
@@ -653,10 +646,6 @@ for (i in 1:n) {
   resultsb_ak[i]<- probabilityb_ak
 }
 
-
-```
-
-```{r}
 # Trump Arizona 
 
 t_func_az<- function(a) { 
@@ -678,9 +667,6 @@ for (i in 1:n) {
   resultst_az[i]<- probabilityt_az
 }
 
-```
-
-```{r}
 # Biden Arizona 
 
 b_func_az<- function(a) { 
@@ -702,9 +688,6 @@ for (i in 1:n) {
   resultsb_az[i]<- probabilityb_az
 }
 
-```
-
-```{r}
 demaz<- tibble(resultsb_az)
 
 ggplot(demaz, aes(x= resultsb_az[,1])) + 
@@ -713,9 +696,6 @@ ggplot(demaz, aes(x= resultsb_az[,1])) +
   theme(panel.background = element_rect(fill = "white", color = "black")) + 
   ggtitle("Dem Votes in Arizona") + xlab("Votes") + ylab("Count")
 
-```
-
-```{r}
 # Trump Arkansas 
 
 t_func_ar<- function(a) { 
@@ -737,9 +717,6 @@ for (i in 1:n) {
   resultst_ar[i]<- probabilityt_ar
 }
 
-```
-
-```{r}
 # Biden Arkansas
 
 b_func_ar<- function(a) { 
@@ -761,9 +738,6 @@ for (i in 1:n) {
   resultsb_ar[i]<- probabilityb_ar
 }
 
-```
-
-```{r}
 #Trump California
 
 t_func_cali<- function(a) { 
@@ -785,9 +759,6 @@ for (i in 1:n) {
   resultst_cali[i]<- probabilityt_cali
 }
 
-```
-
-```{r}
 #Biden California 
 
 b_func_cali<- function(a) { 
@@ -809,9 +780,6 @@ for (i in 1:n) {
   resultsb_cali[i]<- probabilityb_cali
 }
 
-```
-
-```{r}
 #Trump in Colorado 
 
 t_func_co<- function(a) { 
@@ -833,9 +801,6 @@ for (i in 1:n) {
   resultst_co[i]<- probabilityt_co
 }
 
-```
-
-```{r}
 #Biden Colorado 
 
 b_func_co<- function(a) { 
@@ -857,9 +822,6 @@ for (i in 1:n) {
   resultsb_co[i]<- probabilityb_co
 }
 
-```
-
-```{r}
 # Trump Connecticut
 
 t_func_ct<- function(a) { 
@@ -881,9 +843,6 @@ for (i in 1:n) {
   resultst_ct[i]<- probabilityt_ct
 }
 
-```
-
-```{r}
 # Biden Connecticut
 
 b_func_ct<- function(a) { 
@@ -905,9 +864,6 @@ for (i in 1:n) {
   resultsb_ct[i]<- probabilityb_ct
 }
 
-```
-
-```{r}
 # Trump Delaware
 
 t_func_de<- function(a) { 
@@ -929,9 +885,6 @@ for (i in 1:n) {
   resultst_de[i]<- probabilityt_de
 }
 
-```
-
-```{r}
 # Biden Delaware
 
 b_func_de<- function(a) { 
@@ -953,9 +906,6 @@ for (i in 1:n) {
   resultsb_de[i]<- probabilityb_de
 }
 
-```
-
-```{r}
 # Trump DC
 
 t_func_dc<- function(a) { 
@@ -977,9 +927,6 @@ for (i in 1:n) {
   resultst_dc[i]<- probabilityt_dc
 }
 
-```
-
-```{r}
 # Biden DC
 
 b_func_dc<- function(a) { 
@@ -1000,9 +947,7 @@ for (i in 1:n) {
   probabilityb_dc<- mean(bwinsdc)
   resultsb_dc[i]<- probabilityb_dc
 }
-```
 
-```{r}
 # Trump Florida
 
 t_func_fl<- function(a) { 
@@ -1024,9 +969,6 @@ for (i in 1:n) {
   resultst_fl[i]<- probabilityt_fl
 }
 
-```
-
-```{r}
 # Biden Florida
 
 b_func_fl<- function(a) { 
@@ -1047,9 +989,7 @@ for (i in 1:n) {
   probabilityb_fl<- mean(bwinsfl)
   resultsb_fl[i]<- probabilityb_fl
 }
-```
 
-```{r}
 # Trump Georgia 
 
 t_func_ga<- function(a) { 
@@ -1071,9 +1011,6 @@ for (i in 1:n) {
   resultst_ga[i]<- probabilityt_ga
 }
 
-```
-
-```{r}
 # Biden Georgia 
 
 b_func_ga<- function(a) { 
@@ -1095,9 +1032,6 @@ for (i in 1:n) {
   resultsb_ga[i]<- probabilityb_ga
 }
 
-```
-
-```{r}
 # Trump Hawaii
 
 t_func_ha<- function(a) { 
@@ -1119,9 +1053,6 @@ for (i in 1:n) {
   resultst_ha[i]<- probabilityt_ha
 }
 
-```
-
-```{r}
 # Biden Hawaii
 
 b_func_ha<- function(a) { 
@@ -1143,9 +1074,6 @@ for (i in 1:n) {
   resultsb_ha[i]<- probabilityb_ha
 }
 
-```
-
-```{r}
 # Trump Idaho
 
 t_func_id<- function(a) { 
@@ -1167,9 +1095,6 @@ for (i in 1:n) {
   resultst_id[i]<- probabilityt_id
 }
 
-```
-
-```{r}
 # Biden Idaho
 
 b_func_id<- function(a) { 
@@ -1191,9 +1116,6 @@ for (i in 1:n) {
   resultsb_id[i]<- probabilityb_id
 }
 
-```
-
-```{r}
 # Trump Illinois
 
 t_func_il<- function(a) { 
@@ -1215,9 +1137,6 @@ for (i in 1:n) {
   resultst_il[i]<- probabilityt_il
 }
 
-```
-
-```{r}
 # Biden Illinois
 
 b_func_il<- function(a) { 
@@ -1239,9 +1158,6 @@ for (i in 1:n) {
   resultsb_il[i]<- probabilityb_il
 }
 
-```
-
-```{r}
 # Trump Indiana
 
 t_func_in<- function(a) { 
@@ -1263,9 +1179,6 @@ for (i in 1:n) {
   resultst_in[i]<- probabilityt_in
 }
 
-```
-
-```{r}
 # Biden Indiana
 
 b_func_in<- function(a) { 
@@ -1287,9 +1200,6 @@ for (i in 1:n) {
   resultsb_in[i]<- probabilityb_in
 }
 
-```
-
-```{r}
 # Trump Iowa
 
 t_func_ia<- function(a) { 
@@ -1311,9 +1221,6 @@ for (i in 1:n) {
   resultst_ia[i]<- probabilityt_ia
 }
 
-```
-
-```{r}
 # Biden Iowa
 
 b_func_ia<- function(a) { 
@@ -1335,9 +1242,6 @@ for (i in 1:n) {
   resultsb_ia[i]<- probabilityb_ia
 }
 
-```
-
-```{r}
 # Trump Kansas
 
 t_func_ks<- function(a) { 
@@ -1359,9 +1263,6 @@ for (i in 1:n) {
   resultst_ks[i]<- probabilityt_ks
 }
 
-```
-
-```{r}
 # Biden Kansas
 
 b_func_ks<- function(a) { 
@@ -1383,10 +1284,7 @@ for (i in 1:n) {
   resultsb_ks[i]<- probabilityb_ks
 }
 
-```
-
 # Electoral College Count
-```{r}
 
 electoraldem <- matrix(0, nrow = 17, ncol = 1)
 electoralrep<- matrix(0, nrow = 17, ncol = 1)
@@ -1543,5 +1441,3 @@ if (akdem > akrep) {
 } else {
   electoralrep[17,]<-  3
 }
-
-```
