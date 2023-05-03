@@ -1492,3 +1492,106 @@ if (akdem > akrep) {
 } else {
   electoralrep[17,]<-  3
 }
+
+if (nddem > ndrep) {
+  electoraldem[39,] <-  3
+} else {
+  electoralrep[39,]<-  3
+}
+
+if (ohdem > ohrep) {
+  electoraldem[40,] <-  17
+} else {
+  electoralrep[40,]<-  17
+}
+
+if (okdem > okrep) {
+  electoraldem[41,] <-  7
+} else {
+  electoralrep[41,]<-  7
+}
+
+if (ordem > orrep) {
+  electoraldem[42,] <-  8
+} else {
+  electoralrep[42,]<-  8
+}
+
+if (padem > parep) {
+  electoraldem[43,] <-  19
+} else {
+  electoralrep[43,]<-  19
+}
+
+if (ridem > rirep) {
+  electoraldem[44,] <-  4
+} else {
+  electoralrep[44,]<-  4
+}
+
+if (scdem > screp) {
+  electoraldem[45,] <-  9
+} else {
+  electoralrep[45,]<-  9
+}
+
+if (sddem > sdrep) {
+  electoraldem[46,] <-  3
+} else {
+  electoralrep[46,]<-  3
+}
+
+if (tndem > tnrep) {
+  electoraldem[47,] <-  11
+} else {
+  electoralrep[47,]<-  11
+}
+
+if (txdem > txrep) {
+  electoraldem[48,] <-  3
+} else {
+  electoralrep[48,]<-  3
+}
+
+if (utdem > utrep) {
+  electoraldem[49,] <-  6
+} else {
+  electoralrep[49,]<-  6
+}
+
+if (vtdem > vtrep) {
+  electoraldem[50,] <-  3
+} else {
+  electoralrep[50,]<-  3
+}
+
+if (vadem > varep) {
+  electoraldem[51,] <-  13
+} else {
+  electoralrep[51,]<-  13
+}
+
+if (wadem > warep) {
+  electoraldem[52,] <-  12
+} else {
+  electoralrep[52,]<-  12
+}
+
+if (wvdem > wvrep) {
+  electoraldem[53,] <-  4
+} else {
+  electoralrep[53,]<-  4
+}
+
+if (widem > wirep) {
+  electoraldem[54,] <-  10
+} else {
+  electoralrep[54,]<-  10
+}
+
+if (wydem > wyrep) {
+  electoraldem[55,] <-  3
+} else {
+  electoralrep[55,]<-  3
+}
+
