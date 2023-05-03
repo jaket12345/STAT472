@@ -1340,6 +1340,57 @@ inrep<- sample(resultst_in,1)
 ksdem<- sample(resultsb_ks,1)
 ksrep<- sample(resultst_ks,1)
 
+nddem <- sample(results_nd_dem,1)
+ndrep <- sample(results_nd_rep,1)
+
+ohdem <- sample(results_ohio_dem,1)
+ohrep <- sample(results_ohio_rep,1)
+
+okdem <- sample(results_ok_dem,1)
+okrep <- sample(results_ok_rep,1)
+
+ordem <- sample(results_or_dem,1)
+orrep <- sample(results_or_rep,1)
+
+padem <- sample(results_pa_dem,1)
+parep <- sample(results_pa_rep,1)
+
+ridem <- sample(results_ri_dem,1)
+rirep <- sample(results_ri_rep,1)
+
+scdem <- sample(results_sc_dem,1)
+screp <- sample(results_sc_rep,1)
+
+sddem <- sample(results_sd_dem,1)
+sdrep <- sample(results_sd_rep,1)
+
+tndem <- sample(results_tn_dem,1)
+tnrep <- sample(results_tn_rep,1)
+
+txdem <- sample(results_tx_dem,1)
+txrep <- sample(results_tx_rep,1)
+
+utdem <- sample(results_ut_dem,1)
+utrep <- sample(results_ut_rep,1)
+
+vtdem <- sample(results_vt_dem,1)
+vtrep <- sample(results_vt_rep,1)
+
+vadem <- sample(results_va_dem,1)
+varep <- sample(results_va_rep,1)
+
+wadem <- sample(results_wa_dem,1)
+warep <- sample(results_wa_rep,1)
+
+wvdem <- sample(results_wv_dem,1)
+wvrep <- sample(results_wv_rep,1)
+
+widem <- sample(results_wi_dem,1)
+wirep <- sample(results_wi_rep,1)
+
+wydem <- sample(results_wy_dem,1)
+wyrep <- sample(results_wy_rep,1)
+
 if (ksdem > ksrep) {
   electoraldem[1,] <-  6
 } else {
